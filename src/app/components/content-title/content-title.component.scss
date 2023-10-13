@@ -1,0 +1,33 @@
+.content-title {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+
+	.content-title__wrapper {
+		padding: 2rem 2rem;
+
+		.content-title__title {
+			font-size: 3rem;
+			position: relative;
+
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: -1.2rem;
+				left: 0px;
+				width: 100px;
+				height: 10px;
+				background-color: var(--dark);
+				display: inline-block;
+			}
+
+			& ~ .content-title__subtitle {
+				margin-top: 4rem;
+			}
+		}
+
+		.content-title__subtitle {
+			font-size: 1.4rem;
+		}
+	}
+}
