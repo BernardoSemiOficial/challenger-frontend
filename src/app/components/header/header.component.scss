@@ -1,0 +1,22 @@
+header {
+	width: 100%;
+	height: auto;
+	background-color: var(--dark);
+
+	.header__wrapper {
+		padding: 2rem 2rem;
+
+		.header__image-container {
+			& > a {
+				display: block;
+				text-align: center;
+
+				.header__image {
+					width: 100%;
+					max-width: 300px;
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
