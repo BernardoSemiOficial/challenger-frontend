@@ -1,6 +1,6 @@
 <section class="form-container">
 	<div class="form-wrapper">
-		<form class="form">
+		<form class="form" [formGroup]="gymFilter" (ngSubmit)="onSubmit()">
 			<h3 class="form__section-hour">
 				<img
 					class="form__icon-hour"
@@ -15,22 +15,40 @@
 			<ul class="form__field-periods">
 				<li class="form__field-period">
 					<div class="form__field-radio">
-						<input type="radio" name="period" value="manhã" id="manhã" />
-						<label for="manhã">Manhã</label>
+						<input
+							type="radio"
+							name="period"
+							value="morning"
+							id="morning"
+							formControlName="period"
+						/>
+						<label for="morning">Manhã</label>
 					</div>
 					<p class="form__field-hour">06:00 às 12:00</p>
 				</li>
 				<li class="form__field-period">
 					<div class="form__field-radio">
-						<input type="radio" name="period" value="tarde" id="tarde" />
-						<label for="tarde">Tarde</label>
+						<input
+							type="radio"
+							name="period"
+							value="afternoon"
+							id="afternoon"
+							formControlName="period"
+						/>
+						<label for="afternoon">Tarde</label>
 					</div>
 					<p class="form__field-hour">12:01 às 18:00</p>
 				</li>
 				<li class="form__field-period">
 					<div class="form__field-radio">
-						<input type="radio" name="period" value="Noite" id="Noite" />
-						<label for="Noite">Noite</label>
+						<input
+							type="radio"
+							name="period"
+							value="night"
+							id="night"
+							formControlName="period"
+						/>
+						<label for="night">Noite</label>
 					</div>
 					<p class="form__field-hour">18:01 às 23:00</p>
 				</li>
@@ -38,8 +56,13 @@
 
 			<div class="form__field-column">
 				<div class="form__field--closed-units">
-					<input type="checkbox" name="closed-units" id="closed units" />
-					<label for="closed units">Exibir unidades fechar</label>
+					<input
+						type="checkbox"
+						name="closedUnits"
+						id="closedUnits"
+						formControlName="closedUnits"
+					/>
+					<label for="closedUnits">Exibir unidades fechar</label>
 				</div>
 
 				<div class="form__field">
@@ -50,8 +73,14 @@
 			</div>
 
 			<div class="form__actions">
-				<button class="form__action-search">ENCONTRAR UNIDADE</button>
-				<button class="form__action-clear">LIMPAR</button>
+				<button
+					class="form__action-search"
+					type="submit"
+					[disabled]="!gymFilter.valid"
+				>
+					ENCONTRAR UNIDADE
+				</button>
+				<button class="form__action-clear" (click)="onClear()">LIMPAR</button>
 			</div>
 		</form>
 	</div>
