@@ -1,0 +1,140 @@
+.form-container {
+	width: 100%;
+	max-width: var(--container-width);
+	margin: 0 auto;
+
+	.form-wrapper {
+		padding: 2rem 2rem;
+
+		.form {
+			width: 100%;
+			box-shadow: 0px 2px 2px 3px var(--white-grey);
+			border-radius: var(--border-radius-1);
+			padding: 2.5rem;
+
+			.form__section-hour {
+				display: flex;
+				align-items: center;
+				column-gap: 1rem;
+				font-size: 1.6rem;
+				font-weight: 300;
+
+				.form__icon-hour {
+					max-width: 3rem;
+				}
+			}
+
+			.form__title {
+				font-size: 2.5rem;
+				font-weight: 300;
+				margin-top: 2rem;
+				padding-left: 1rem;
+				padding-bottom: 0.6rem;
+				position: relative;
+
+				&::after {
+					content: "";
+					position: absolute;
+					top: 100%;
+					left: 0px;
+					right: 0px;
+					height: 1px;
+					display: block;
+					background-color: var(--white-grey);
+				}
+			}
+
+			.form__field-periods {
+				margin-top: 1.5rem;
+
+				.form__field-period {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+
+					padding-block: 0.8rem;
+					margin-bottom: 0.8rem;
+					border-bottom: 1px solid var(--white-grey);
+
+					.form__field-radio {
+						display: flex;
+						align-items: center;
+						column-gap: 0.8rem;
+
+						input[type="radio"] {
+							color: var(--light-grey);
+						}
+
+						label {
+							font-size: 1.8rem;
+							font-weight: 300;
+						}
+					}
+
+					.form__field-hour {
+						font-size: 1.8rem;
+						font-weight: 300;
+					}
+				}
+			}
+
+			.form__field-column {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-top: 3.5rem;
+
+				.form__field--closed-units {
+					display: flex;
+					align-items: center;
+					column-gap: 1rem;
+
+					input[name="closed-units"] {
+						width: 2rem;
+						height: 2rem;
+					}
+
+					label {
+						font-size: 1.8rem;
+					}
+				}
+
+				.form__field--unit-found,
+				strong {
+					font-size: 1.8rem;
+				}
+			}
+
+			.form__actions {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				column-gap: 2rem;
+				max-width: 800px;
+				margin: 3rem auto 0px;
+
+				.form__action-search,
+				.form__action-clear {
+					font-size: 2rem;
+					font-weight: 700;
+					border-radius: var(--border-radius-1);
+					border: none;
+					height: 4.5rem;
+					padding-inline: 2rem;
+					width: 100%;
+					cursor: pointer;
+				}
+
+				.form__action-search {
+					background-color: var(--yellow);
+				}
+
+				.form__action-clear {
+					border: 1px solid var(--white-grey);
+					background-color: transparent;
+				}
+			}
+		}
+	}
+}

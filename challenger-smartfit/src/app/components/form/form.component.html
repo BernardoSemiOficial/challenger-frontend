@@ -1,0 +1,58 @@
+<section class="form-container">
+	<div class="form-wrapper">
+		<form class="form">
+			<h3 class="form__section-hour">
+				<img
+					class="form__icon-hour"
+					src="/assets/images/icon-hour.png"
+					alt="Ícone de relógio"
+					title="Ícone de relógio"
+				/>
+				Horário
+			</h3>
+			<h2 class="form__title">Qual período quer treinar?</h2>
+
+			<ul class="form__field-periods">
+				<li class="form__field-period">
+					<div class="form__field-radio">
+						<input type="radio" name="period" value="manhã" id="manhã" />
+						<label for="manhã">Manhã</label>
+					</div>
+					<p class="form__field-hour">06:00 às 12:00</p>
+				</li>
+				<li class="form__field-period">
+					<div class="form__field-radio">
+						<input type="radio" name="period" value="tarde" id="tarde" />
+						<label for="tarde">Tarde</label>
+					</div>
+					<p class="form__field-hour">12:01 às 18:00</p>
+				</li>
+				<li class="form__field-period">
+					<div class="form__field-radio">
+						<input type="radio" name="period" value="Noite" id="Noite" />
+						<label for="Noite">Noite</label>
+					</div>
+					<p class="form__field-hour">18:01 às 23:00</p>
+				</li>
+			</ul>
+
+			<div class="form__field-column">
+				<div class="form__field--closed-units">
+					<input type="checkbox" name="closed-units" id="closed units" />
+					<label for="closed units">Exibir unidades fechar</label>
+				</div>
+
+				<div class="form__field">
+					<p class="form__field--unit-found">
+						Resultados encontrados: <strong>{{ unitsFound }}</strong>
+					</p>
+				</div>
+			</div>
+
+			<div class="form__actions">
+				<button class="form__action-search">ENCONTRAR UNIDADE</button>
+				<button class="form__action-clear">LIMPAR</button>
+			</div>
+		</form>
+	</div>
+</section>

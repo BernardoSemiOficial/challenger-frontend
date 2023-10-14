@@ -1,19 +1,19 @@
 .content-title {
 	width: 100%;
-	max-width: 1200px;
+	max-width: var(--container-width);
 	margin: 0 auto;
 
 	.content-title__wrapper {
-		padding: 2rem 2rem;
+		padding: 6rem 2rem 2rem;
 
 		.content-title__title {
-			font-size: 3rem;
+			font-size: 4.2rem;
 			position: relative;
 
 			&::after {
 				content: "";
 				position: absolute;
-				bottom: -1.2rem;
+				bottom: -2rem;
 				left: 0px;
 				width: 100px;
 				height: 10px;
@@ -22,12 +22,12 @@
 			}
 
 			& ~ .content-title__subtitle {
-				margin-top: 4rem;
+				margin-top: 7rem;
 			}
 		}
 
 		.content-title__subtitle {
-			font-size: 1.4rem;
+			font-size: 1.8rem;
 		}
 	}
 }
