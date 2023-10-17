@@ -1,3 +1,5 @@
+@import "../../../styles/main.scss";
+
 .form-container {
 	width: 100%;
 	max-width: var(--container-width);
@@ -84,6 +86,12 @@
 				justify-content: space-between;
 				margin-top: 3.5rem;
 
+				@include tablet() {
+					flex-direction: column;
+					align-items: flex-start;
+					row-gap: 2rem;
+				}
+
 				.form__field--closed-units {
 					display: flex;
 					align-items: center;
@@ -113,6 +121,12 @@
 				column-gap: 2rem;
 				max-width: 800px;
 				margin: 3rem auto 0px;
+
+				@include tablet() {
+					flex-direction: column;
+					row-gap: 2rem;
+					column-gap: initial;
+				}
 
 				.form__action-search,
 				.form__action-clear {
