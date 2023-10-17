@@ -1,0 +1,67 @@
+@mixin mobile {
+	@media (max-width: #{$breakpoint-mobile}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (max-width: #{$breakpoint-tablet}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (max-width: #{$breakpoint-desktop}) {
+		@content;
+	}
+}
+
+@mixin x-desktop {
+	@media (max-width: #{$breakpoint-x-large}) {
+		@content;
+	}
+}
+
+@mixin xx-desktop {
+	@media (max-width: #{$breakpoint-xx-large}) {
+		@content;
+	}
+}
+
+@mixin lx-desktop {
+	@media (max-width: #{$breakpoint-lx-large}) {
+		@content;
+	}
+}
+
+@mixin full-screen($position: absolute) {
+	position: $position;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+@mixin column($wrap: wrap) {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: $wrap;
+}
+
+@mixin row($wrap: wrap) {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: $wrap;
+}
+
+@mixin align($base, $eixo) {
+	justify-content: $base;
+	align-items: $eixo;
+}
+
+@mixin text-ellipsis($height: auto) {
+	height: $height;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
