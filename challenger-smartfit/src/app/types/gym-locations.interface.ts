@@ -13,9 +13,15 @@ export interface Location {
 	fountain: string;
 	locker_room: string;
 	schedules: Schedule[];
+	formattedFilter: FormattedFilter;
 }
 
 interface Schedule {
 	weekdays: string;
 	hour: string;
+}
+
+export interface FormattedFilter {
+	currentOpeningHours: Schedule;
+	operatingRange: number[];
 }
