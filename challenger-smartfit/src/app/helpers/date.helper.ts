@@ -20,11 +20,19 @@ export const weekdayNameToWeekdayIdx = {
 	sáb: 6,
 } as const;
 
-export class CurrentDate {
+export class DateHelper {
 	static getCurrentDate() {
 		const weekdayIndex = new Date().getDay();
 		return weekdayIdxToWeekdayName[
 			weekdayIndex as keyof typeof weekdayIdxToWeekdayName
 		];
+	}
+
+	static generateHourList(startHour: number, endHour: number) {
+		const hourList = [];
+		for (let i = startHour; i <= endHour; i++) {
+			hourList.push(i);
+		}
+		return hourList;
 	}
 }
