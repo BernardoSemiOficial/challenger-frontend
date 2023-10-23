@@ -1,6 +1,10 @@
 <app-header></app-header>
 <app-content-title></app-content-title>
 <main>
-	<app-form></app-form>
+	<app-form (formOnSubmit)="formOnSubmit()"></app-form>
+	<app-card-list
+		*ngIf="isViewCardList | async"
+		[gymLocationsFilter]="gymLocationsFilter"
+	></app-card-list>
 	<router-outlet></router-outlet>
 </main>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {
 	FormBuilder,
 	FormControl,
@@ -20,12 +20,12 @@ interface GymFilter {
 	styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
+	@Output() formOnSubmit = new EventEmitter();
+
 	gymFilter!: FormGroup<GymFilter>;
 	gymLocations!: GymLocations;
 	gymLocationsFilter!: Location[];
 	unitsFound = this.gymLocations?.locations.length ?? 0;
-
-	currentDate = new Date();
 
 	constructor(
 		private formBuilder: FormBuilder,
@@ -47,34 +47,36 @@ export class FormComponent implements OnInit {
 
 	onSubmit() {
 		// EXIBIR TODAS AS ACADEMIAS QUE SE ENCONTRAM ABERTAS EM FUNCIONAMENTO
+		const period = this.gymFilter.value.period;
+		if (!period) return;
+
+		const isViewClosedUnits = Boolean(this.gymFilter.value.isViewClosedUnits);
 		const gymOpenedUnitsLocations = this.gymLocations.locations.filter(
 			(gymLocation) => gymLocation.opened
 		);
-		const period = this.gymFilter.value.period;
-		const isViewClosedUnits = Boolean(this.gymFilter.value.isViewClosedUnits);
 
-		if (period) {
-			this.gymLocationsFilter = gymOpenedUnitsLocations.filter((location) => {
-				const schedule = location.formattedFilter.currentOpeningHours;
-				const { isGymOpenHourStart, isGymOpenHourEnd } =
-					GymLocationFilter.gymAvailableTimes({
-						hour: schedule.hour,
-						period,
-						isViewClosedUnits,
-					});
+		this.gymLocationsFilter = gymOpenedUnitsLocations.filter((location) => {
+			const schedule = location.formattedFilter.currentOpeningHours;
+			const { isGymOpenHourStart, isGymOpenHourEnd } =
+				GymLocationFilter.gymAvailableTimes({
+					hour: schedule.hour,
+					period,
+					isViewClosedUnits,
+				});
 
-				/** ACADEMIA ATENDE TODOS OS HORÁRIOS QUE O USUÁRIO DESEJA */
-				if (isGymOpenHourStart && isGymOpenHourEnd) return true;
-				/** ACADEMIA ATENDE AO HORÁRIO DO USUÁRIO PARCIALMENTE */
-				if (isGymOpenHourStart || isGymOpenHourEnd) return true;
+			/** ACADEMIA ATENDE TODOS OS HORÁRIOS QUE O USUÁRIO DESEJA */
+			if (isGymOpenHourStart && isGymOpenHourEnd) return true;
+			/** ACADEMIA ATENDE AO HORÁRIO DO USUÁRIO PARCIALMENTE */
+			if (isGymOpenHourStart || isGymOpenHourEnd) return true;
 
-				return false;
-			});
-		}
+			return false;
+		});
 
 		this.gymService.setGymLocationFilter(this.gymLocationsFilter);
 		this.unitsFound = this.gymLocationsFilter.length ?? 0;
 		console.log('gymLocationsFilter', this.gymLocationsFilter);
+
+		this.formOnSubmit.emit();
 	}
 
 	onClear() {
