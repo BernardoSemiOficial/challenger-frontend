@@ -6,13 +6,13 @@
 	.card-list__list {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		justify-content: stretch;
 		align-items: stretch;
 		gap: 2rem;
 		padding: 2rem 2rem;
 
 		.card-list__item {
-			flex: 1 1 30rem;
+			flex: 1 1 300px;
 			align-self: stretch;
 		}
 	}
