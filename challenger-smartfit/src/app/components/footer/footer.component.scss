@@ -1,0 +1,32 @@
+.footer {
+	width: 100%;
+	height: auto;
+	background-color: var(--dark-grey);
+	margin-top: 1rem;
+
+	.footer__wrapper {
+		padding: 5rem;
+
+		.footer__image-container {
+			margin-bottom: 1.5rem;
+
+			& > a {
+				display: block;
+				text-align: center;
+
+				.footer__image {
+					width: 100%;
+					max-width: 100px;
+					display: inline-block;
+				}
+			}
+		}
+
+		.footer__copyright {
+			font-size: 1.5rem;
+			font-weight: 400;
+			text-align: center;
+			color: var(--white);
+		}
+	}
+}

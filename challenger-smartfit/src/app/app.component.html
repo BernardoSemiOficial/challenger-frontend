@@ -2,9 +2,11 @@
 <app-content-title></app-content-title>
 <main>
 	<app-form (formOnSubmit)="formOnSubmit()"></app-form>
+	<app-legends></app-legends>
 	<app-card-list
 		*ngIf="isViewCardList | async"
 		[gymLocationsFilter]="gymLocationsFilter"
 	></app-card-list>
+	<app-footer></app-footer>
 	<router-outlet></router-outlet>
 </main>

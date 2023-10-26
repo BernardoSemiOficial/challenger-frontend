@@ -11,6 +11,8 @@ import { ContentTitleComponent } from './components/content-title/content-title.
 import { FormComponent } from './components/form/form.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CardComponent } from './components/card/card.component';
+import { LegendsComponent } from './components/legends/legends.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
 	declarations: [
@@ -20,6 +22,8 @@ import { CardComponent } from './components/card/card.component';
 		FormComponent,
 		CardListComponent,
   CardComponent,
+  LegendsComponent,
+  FooterComponent,
 	],
 	imports: [
 		BrowserModule,

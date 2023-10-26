@@ -1,0 +1,57 @@
+.legends {
+	width: 100%;
+	max-width: var(--container-width);
+	margin: 1rem auto;
+
+	.legends__wrapper {
+		padding: 2rem 2rem;
+
+		.legends__list {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: stretch;
+			gap: 2.5rem;
+			background-color: var(--white-grey-200);
+			padding: 3rem 2rem;
+
+			.legends__item {
+				display: flex;
+				flex-wrap: nowrap;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+
+				.legends__item-label {
+					font-size: 1.6rem;
+					font-weight: 700;
+					margin-bottom: 1.5rem;
+				}
+
+				.legends__item-images {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 1.5rem;
+
+					.legends__item-legend {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+
+						img {
+							width: 100%;
+							max-width: 60px;
+							display: inline-block;
+						}
+
+						span {
+							font-size: 1.4rem;
+							margin-top: 0.6rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
