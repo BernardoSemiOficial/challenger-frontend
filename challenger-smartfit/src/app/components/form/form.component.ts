@@ -52,7 +52,7 @@ export class FormComponent implements OnInit {
 
 		const isViewClosedUnits = Boolean(this.gymFilter.value.isViewClosedUnits);
 		const gymOpenedUnitsLocations = this.gymLocations.locations.filter(
-			(gymLocation) => gymLocation.opened
+			(gymLocation) => gymLocation.opened === !isViewClosedUnits
 		);
 
 		this.gymLocationsFilter = gymOpenedUnitsLocations.filter((location) => {
