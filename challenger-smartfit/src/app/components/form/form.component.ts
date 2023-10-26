@@ -59,7 +59,7 @@ export class FormComponent implements OnInit {
 			const schedule = location.formattedFilter.currentOpeningHours;
 			const { isGymOpenHourStart, isGymOpenHourEnd } =
 				GymLocationFilter.gymAvailableTimes({
-					hour: schedule.hour,
+					hour: schedule?.hour,
 					period,
 					isViewClosedUnits,
 				});

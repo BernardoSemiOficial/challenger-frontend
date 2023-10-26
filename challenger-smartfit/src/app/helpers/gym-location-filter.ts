@@ -80,7 +80,7 @@ export class GymLocationFilter {
 			},
 		};
 		const isGymClosed = hour === 'Fechada';
-		const [hourStart, hourEnd] = hour.replace(/h/g, '').split(' às ');
+		const [hourStart, hourEnd] = (hour ?? '').replace(/h/g, '').split(' às ');
 		const gymOpeningHours = DateHelper.generateHourList(
 			Number(hourStart),
 			Number(hourEnd)
