@@ -1,0 +1,19 @@
+.card-list {
+	width: 100%;
+	max-width: var(--container-width);
+	margin: 0 auto;
+
+	.card-list__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: stretch;
+		gap: 2rem;
+		padding: 2rem 2rem;
+
+		.card-list__item {
+			flex: 1 1 30rem;
+			align-self: stretch;
+		}
+	}
+}

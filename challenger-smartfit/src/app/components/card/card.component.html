@@ -1,1 +1,75 @@
-<p>card works!</p>
+<section class="card">
+	<p
+		class="card__status"
+		[ngClass]="{
+			'card__status--opened': card.opened,
+			'card__status--closed': !card.opened
+		}"
+	>
+		{{ card.opened ? "Aberto" : "Fechado" }}
+	</p>
+	<h3 class="card__gym-title">{{ card.title }}</h3>
+	<address class="card__gym-address" [innerHTML]="card.content"></address>
+	<figure class="card__gym-structure">
+		<img
+			*ngIf="card.mask === 'required'"
+			src="/assets/images/required-mask.png"
+			alt="Uso de máscara é obrigatório"
+			title="Uso de máscara é obrigatório"
+		/>
+		<img
+			*ngIf="card.mask === 'recommended'"
+			src="/assets/images/recommended-mask.png"
+			alt="Uso de máscara é recomendado"
+			title="Uso de máscara é recomendado"
+		/>
+		<img
+			*ngIf="card.towel === 'required'"
+			src="/assets/images/required-towel.png"
+			alt="Uso de toalha é obrigatório"
+			title="Uso de toalha é obrigatório"
+		/>
+		<img
+			*ngIf="card.towel === 'required'"
+			src="/assets/images/recommended-towel.png"
+			alt="Uso de toalha é recomendado"
+			title="Uso de toalha é recomendado"
+		/>
+		<img
+			*ngIf="card.fountain === 'required'"
+			src="/assets/images/partial-fountain.png"
+			alt="Uso de bebedouro é parcial"
+			title="Uso de bebedouro é parcial"
+		/>
+		<img
+			*ngIf="card.fountain === 'required'"
+			src="/assets/images/forbidden-fountain.png"
+			alt="Uso de bebedouro é proibido"
+			title="Uso de bebedouro é proibido"
+		/>
+		<img
+			*ngIf="card.fountain === 'required'"
+			src="/assets/images/required-lockerroom.png"
+			alt="Uso de vestiário é liberado"
+			title="Uso de vestiário é liberado"
+		/>
+		<img
+			*ngIf="card.fountain === 'required'"
+			src="/assets/images/partial-lockerroom.png"
+			alt="Uso de vestiário é parcial"
+			title="Uso de vestiário é parcial"
+		/>
+		<img
+			*ngIf="card.fountain === 'required'"
+			src="/assets/images/forbidden-lockerroom.png"
+			alt="Uso de vestiário é proibido"
+			title="Uso de vestiário é proibido"
+		/>
+	</figure>
+	<ul class="card__schedules">
+		<li *ngFor="let schedule of card.schedules">
+			<strong>{{ schedule.weekdays }}</strong>
+			<p>{{ schedule.hour }}</p>
+		</li>
+	</ul>
+</section>

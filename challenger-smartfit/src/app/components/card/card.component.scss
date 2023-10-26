@@ -1,0 +1,73 @@
+.card {
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+	box-shadow: 0px 0px 4px 2px rgba(#808080, 0.2);
+	padding: 1.5rem;
+	background-color: var(--white-grey-200);
+
+	.card__status {
+		color: var(--dark-grey);
+		font-size: 1.4rem;
+		font-weight: 700;
+
+		&.card__status--opened {
+			color: var(--green);
+		}
+
+		&.card__status--closed {
+			color: var(--red);
+		}
+	}
+
+	.card__gym-title {
+		color: var(--dark-grey);
+		font-size: 2rem;
+		font-weight: 700;
+		margin-top: 1.2rem;
+	}
+
+	.card__gym-address {
+		color: var(--light-grey);
+		font-size: 2rem;
+		font-weight: 400;
+		font-style: normal;
+		margin-top: 0.8rem;
+		padding-bottom: 1.5rem;
+		margin-bottom: 1.5rem;
+		border-bottom: 1px solid rgba(#808080, 0.2);
+	}
+
+	.card__gym-structure {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		margin-bottom: 1.5rem;
+
+		img {
+			max-width: 60px;
+			width: 100%;
+			display: inline-block;
+		}
+	}
+
+	.card__schedules {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem 2rem;
+
+		strong {
+			color: var(--dark-grey);
+			font-size: 2rem;
+			font-weight: 700;
+		}
+
+		p {
+			font-size: 1.4rem;
+			font-weight: 400;
+			margin-top: 1rem;
+		}
+	}
+}
