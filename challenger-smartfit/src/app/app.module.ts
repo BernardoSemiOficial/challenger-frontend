@@ -7,12 +7,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardListComponent } from './components/card-list/card-list.component';
+import { CardComponent } from './components/card/card.component';
 import { ContentTitleComponent } from './components/content-title/content-title.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { FormComponent } from './components/form/form.component';
 import { HeaderComponent } from './components/header/header.component';
-import { CardComponent } from './components/card/card.component';
 import { LegendsComponent } from './components/legends/legends.component';
-import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
 	declarations: [
@@ -21,9 +21,9 @@ import { FooterComponent } from './components/footer/footer.component';
 		ContentTitleComponent,
 		FormComponent,
 		CardListComponent,
-  CardComponent,
-  LegendsComponent,
-  FooterComponent,
+		CardComponent,
+		LegendsComponent,
+		FooterComponent,
 	],
 	imports: [
 		BrowserModule,
