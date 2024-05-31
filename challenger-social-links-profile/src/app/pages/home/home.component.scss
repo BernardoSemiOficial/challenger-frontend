@@ -1,0 +1,5 @@
+@import "variables";
+
+::ng-deep body {
+  background-color: $color-neutral-off-black;
+}
