@@ -1,0 +1,8 @@
+*.ts linguist-language=TypeScript
+*.html linguist-language=HTML
+*.css linguist-language=CSS
+*.component.ts linguist-language=Angular
+*.component.spec.ts linguist-language=Angular
+*.service.ts linguist-language=Angular
+*.service.spec.ts linguist-language=Angular
+*.module.ts linguist-language=Angular
